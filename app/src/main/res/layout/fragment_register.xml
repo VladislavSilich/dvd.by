@@ -5,7 +5,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.silich.vladislav.d4dby.RegisterFragment">
-
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,17 +12,14 @@
         app:cardBackgroundColor="@color/colorAccent"
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp">
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="15sp"
             android:layout_gravity="center"
-
             android:textColor="@color/primary_text"
             android:text="@string/card_view_register_txt"/>
     </android.support.v7.widget.CardView>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,8 +34,6 @@
             android:textColor="@color/colorAccent"
             android:textSize="25dp"
             android:text="@string/txt_register"/>
-
-
         <Button
             android:id="@+id/btn_register_buyer"
             android:layout_width="120dp"
@@ -48,7 +42,6 @@
             android:layout_gravity="center"
             android:textColor="@color/primary_text"
             android:gravity="center"/>
-
         <Button
             android:id="@+id/btn_register_seller"
             android:layout_gravity="center"
@@ -59,8 +52,5 @@
             android:layout_height="wrap_content"
             android:text="@string/btn_register_seller"
             />
-
     </LinearLayout>
-
-
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.silich.vladislav.d4dby;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -25,6 +26,7 @@ public class RegisterFragment extends android.app.Fragment implements View.OnCli
 
     @Override
     public void onClick(View v) {
+        FragmentManager fragmentManager = getFragmentManager();
         switch (v.getId()){
             case R.id.btn_register_buyer:
                 break;
