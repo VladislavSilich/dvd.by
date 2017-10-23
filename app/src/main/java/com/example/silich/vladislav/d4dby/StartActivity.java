@@ -84,15 +84,19 @@ public class StartActivity extends AppCompatActivity
 
         if (id == R.id.nav_enter) {
             fragmentManager.beginTransaction().replace(R.id.content_frame,new AuthFragment()).commit();
+
         } else if (id == R.id.nav_registration) {
-            fragmentManager.beginTransaction().replace(R.id.content_frame,new RegisterFragment()).commit();
-        } else if (id == R.id.nav_slideshow) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame,new RegistrationFragment()).commit();
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_spare_parts) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_sto) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_tires) {
+
+        } else if (id == R.id.nav_washing) {
+
+        }else if (id == R.id.nav_about_us){
 
         }
 

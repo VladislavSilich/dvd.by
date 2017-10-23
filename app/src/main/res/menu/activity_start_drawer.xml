@@ -13,25 +13,29 @@
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Разделы">
         <menu>
 
             <item
-                android:id="@+id/nav_slideshow"
-                android:icon="@drawable/ic_menu_slideshow"
-                android:title="Slideshow" />
+                android:id="@+id/nav_spare_parts"
+                android:icon="@drawable/ic_attachment_black_24dp"
+                android:title="Запчасти" />
             <item
-                android:id="@+id/nav_manage"
+                android:id="@+id/nav_sto"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="Tools" />
+                android:title="СТО" />
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:id="@+id/nav_tires"
+                android:icon="@drawable/ic_directions_car_black_24dp"
+                android:title="Шины/Диски" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_washing"
+                android:icon="@drawable/ic_local_car_wash_black_24dp"
+                android:title="Мойка/Чистка" />
+            <item
+                android:id="@+id/nav_about_us"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="О нас" />
         </menu>
     </item>
 
