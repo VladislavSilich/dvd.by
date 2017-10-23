@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.silich.vladislav.d4dby.StartActivity"
+    tools:context="com.example.silich.vladislav.d4dby.GeneralActivity"
     tools:showIn="@layout/app_bar_start">
 
         <ScrollView
