@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context="com.example.silich.vladislav.d4dby.StartActivity">
 
     <LinearLayout
@@ -11,7 +12,6 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="40dp"
-        android:background="@color/white"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginRight="40dp"
