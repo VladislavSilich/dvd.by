@@ -104,6 +104,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Продавец"
+                        android:id="@+id/radio_register_seller"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
@@ -112,6 +113,7 @@
                         android:layout_height="wrap_content"
                         android:text="Покупатель"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/radio_register_buyer"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>

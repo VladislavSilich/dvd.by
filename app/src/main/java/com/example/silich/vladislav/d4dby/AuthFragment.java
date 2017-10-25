@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AuthFragment extends android.app.Fragment implements View.OnClickListener{
 
@@ -35,6 +36,9 @@ public class AuthFragment extends android.app.Fragment implements View.OnClickLi
         FragmentManager fragmentManager = getFragmentManager();
         switch (v.getId()){
             case R.id.btn_auth_register :
+                if (InputValidation.checkEmptyData(edtEmail.getText().toString(),edtPass.getText().toString(),getActivity())){
+                    Toast.makeText(getActivity(),"Добро пожаловать!",Toast.LENGTH_LONG).show();
+                }
                 break;
             case R.id.btn_auth_cancel :
                 fragmentManager.beginTransaction().replace(R.id.content_frame,new StartFragment()).commit();

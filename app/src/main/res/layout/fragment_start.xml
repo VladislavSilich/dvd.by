@@ -135,7 +135,6 @@
                     android:layout_margin="20dp"
                     android:background="@color/colorAccent"
                     android:text="Найти продавцов"/>
-
             </LinearLayout>
 
         </LinearLayout>
