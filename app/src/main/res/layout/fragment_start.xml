@@ -101,22 +101,25 @@
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
-                    <RadioButton
+                    <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/radio_btn_new"
                         android:text="Новое"
+                        android:checked="true"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
-                    <RadioButton
+                    <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:id="@+id/radio_btn_old"
+                        android:checked="true"
                         android:text="Б/У"
                         android:layout_marginLeft="10dp"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
-
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
