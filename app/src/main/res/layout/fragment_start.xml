@@ -1,117 +1,122 @@
-<ScrollView android:layout_height="wrap_content"
-    android:layout_width="match_parent"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="com.example.silich.vladislav.d4dby.GeneralActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.silich.vladislav.d4dby.StartFragment">
+
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
-            android:layout_marginTop="40dp"
             android:layout_marginRight="40dp"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Найти продавцов запчастей"/>
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Марка авто"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorPrimary"
+                android:id="@+id/mark_auto">
+
+            </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+
+
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/model_auto"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:text="Модель авто">
+
+            </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/year_auto"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:text="Выберите год">
+            </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
+                android:layout_marginTop="20dp"
                 android:textColor="@color/primary_text"
-                android:text="Ваше имя:"
+                android:text="Введите искомую запчасть:"
                 />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:textColor="@color/primary_text"/>
-
-
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                />
+            <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:id="@+id/city_search"
+                android:textColorHint="@color/colorPrimary"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="20dp"
+                android:text="Город поиска">
+            </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/primary_text"
-                android:text="Ваш e-mail:"
+                android:text="Состояние запчастей:"
                 />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:backgroundTint="@color/colorAccent"
-                android:textColor="@color/primary_text"
-                />
-
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/primary_text"
-                android:text="Придумайте пароль:"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:backgroundTint="@color/colorAccent"
-                android:textColor="@color/primary_text"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/primary_text"
-                android:text="Повторите пароль:"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/colorAccent"
-                android:inputType="textPassword"
-                android:textColor="@color/primary_text"
-
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="17sp"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/primary_text"
-                android:text="Зарегистрироваться как?"
-                />
-
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical">
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                android:orientation="horizontal">
+
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Продавец"
+                        android:text="Новое"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Покупатель"
-                        android:layout_marginTop="10dp"
+                        android:text="Б/У"
+                        android:layout_marginLeft="10dp"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
-                </RadioGroup>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -126,7 +131,7 @@
                     android:layout_marginLeft="5dp"
                     android:padding="10dp"
                     android:background="@color/colorAccent"
-                    android:text="Регистрация"/>
+                    android:text="Найти продавцов"/>
                 <Button
                     android:layout_width="wrap_content"
                     android:padding="5dp"
@@ -139,6 +144,8 @@
 
         </LinearLayout>
 
-    </LinearLayout>
 
-</ScrollView>
+</LinearLayout>
+    </ScrollView>
+
+
