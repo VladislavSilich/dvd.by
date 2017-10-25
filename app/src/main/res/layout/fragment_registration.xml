@@ -26,6 +26,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/edt_register_name"
                 android:backgroundTint="@color/colorAccent"
                 android:textColor="@color/primary_text"/>
 
@@ -41,6 +42,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/edt_register_email"
                 android:inputType="textEmailAddress"
                 android:backgroundTint="@color/colorAccent"
                 android:textColor="@color/primary_text"
@@ -60,6 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
+                android:id="@+id/edt_register_pas"
                 android:backgroundTint="@color/colorAccent"
                 android:textColor="@color/primary_text"
                 />
@@ -74,6 +77,7 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:id="@+id/edt_register_repeatPas"
                 android:backgroundTint="@color/colorAccent"
                 android:inputType="textPassword"
                 android:textColor="@color/primary_text"
@@ -124,6 +128,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:id="@+id/btn_register_reg"
                     android:padding="10dp"
                     android:background="@color/colorAccent"
                     android:text="Регистрация"/>
@@ -132,6 +137,7 @@
                     android:padding="5dp"
                     android:layout_marginTop="10dp"
                     android:layout_height="wrap_content"
+                    android:id="@+id/btn_register_cancel"
                     android:layout_margin="20dp"
                     android:background="@color/colorPrimaryOpasity"
                     android:text="Отмена"/>
