@@ -7,7 +7,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context="com.example.silich.vladislav.d4dby.GeneralActivity">
+        tools:context="com.example.silich.vladislav.d4dby.activity.GeneralActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

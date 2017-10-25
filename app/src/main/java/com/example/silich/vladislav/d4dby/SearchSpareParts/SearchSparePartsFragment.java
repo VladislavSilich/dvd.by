@@ -1,4 +1,4 @@
-package com.example.silich.vladislav.d4dby;
+package com.example.silich.vladislav.d4dby.SearchSpareParts;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,14 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
+import com.example.silich.vladislav.d4dby.R;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 
-public class StartFragment extends android.app.Fragment {
-    MaterialBetterSpinner spinMarkAuto;
-    MaterialBetterSpinner spinModelAuto;
-    MaterialBetterSpinner spinYearAuto;
-    MaterialBetterSpinner spinCitySearch;
+public class SearchSparePartsFragment extends android.app.Fragment {
+    private MaterialBetterSpinner spinMarkAuto;
+    private MaterialBetterSpinner spinModelAuto;
+    private MaterialBetterSpinner spinYearAuto;
+    private MaterialBetterSpinner spinCitySearch;
+
+    private ArrayAdapter<String> markAdapter;
+    private ArrayAdapter<String> modelAdapter;
+    private ArrayAdapter<String> yearsAdapter;
+    private ArrayAdapter<String> citySearchAdapter;
 
     String [] masMark = {"BMW","asdasdas"};
     String [] masAuto = {"E34","sdada"};
@@ -22,26 +28,26 @@ public class StartFragment extends android.app.Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_start, container, false);
+        View v = inflater.inflate(R.layout.fragment_serarch_spare_parts, container, false);
 
         spinMarkAuto = (MaterialBetterSpinner)v.findViewById(R.id.mark_auto);
         spinModelAuto = (MaterialBetterSpinner)v.findViewById(R.id.model_auto);
         spinYearAuto =(MaterialBetterSpinner)v.findViewById(R.id.year_auto) ;
         spinCitySearch = (MaterialBetterSpinner)v.findViewById(R.id.city_search);
-         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
+          markAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
                  android.R.layout.simple_dropdown_item_1line , masMark);
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(getActivity().getBaseContext(),
+        modelAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
                 android.R.layout.simple_dropdown_item_1line, masAuto);
-        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<>(getActivity().getBaseContext(),
+        yearsAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
                 android.R.layout.simple_dropdown_item_1line, masYearAuto);
-        ArrayAdapter<String> arrayAdapter3 = new ArrayAdapter<>(getActivity().getBaseContext(),
+        citySearchAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
                 android.R.layout.simple_dropdown_item_1line, masCitySearch);
 
 
-        spinModelAuto.setAdapter(arrayAdapter1);
-        spinMarkAuto.setAdapter(arrayAdapter);
-        spinYearAuto.setAdapter(arrayAdapter2);
-        spinCitySearch.setAdapter(arrayAdapter3);
+        spinModelAuto.setAdapter(markAdapter);
+        spinMarkAuto.setAdapter(modelAdapter);
+        spinYearAuto.setAdapter(yearsAdapter);
+        spinCitySearch.setAdapter(citySearchAdapter);
         return v;
 
 

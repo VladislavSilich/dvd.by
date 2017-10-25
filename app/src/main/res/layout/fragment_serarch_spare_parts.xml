@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.silich.vladislav.d4dby.StartFragment">
+    tools:context="com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment">
 
 
 
@@ -107,6 +107,7 @@
                         android:id="@+id/radio_btn_new"
                         android:text="Новое"
                         android:checked="true"
+                        android:layout_marginTop="5dp"
                         android:textSize="17sp"
                         android:textColor="@color/primary_text"
                         android:textColorHint="@color/colorAccent"/>
@@ -115,6 +116,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/radio_btn_old"
                         android:checked="true"
+                        android:layout_marginTop="5dp"
                         android:text="Б/У"
                         android:layout_marginLeft="10dp"
                         android:textSize="17sp"
@@ -126,6 +128,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
                 android:gravity="center"
+                android:layout_marginTop="10dp"
                 android:orientation="vertical">
                 <Button
                     android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.silich.vladislav.d4dby;
+package com.example.silich.vladislav.d4dby.activity;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -11,6 +11,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.silich.vladislav.d4dby.R;
+import com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment;
+import com.example.silich.vladislav.d4dby.auth.AuthFragment;
+import com.example.silich.vladislav.d4dby.register.RegistrationFragment;
+
 public class GeneralActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FragmentManager fragmentManager;
@@ -21,7 +26,7 @@ public class GeneralActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-         fragmentManager = getFragmentManager();
+        fragmentManager = getFragmentManager();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -32,7 +37,7 @@ public class GeneralActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        fragmentManager.beginTransaction().replace(R.id.content_frame,new StartFragment()).commit();
+        fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
     }
 
     @Override

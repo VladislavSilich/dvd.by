@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
-    tools:context="com.example.silich.vladislav.d4dby.GeneralActivity">
+    tools:context="com.example.silich.vladislav.d4dby.activity.GeneralActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

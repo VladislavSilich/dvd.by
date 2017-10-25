@@ -1,4 +1,4 @@
-package com.example.silich.vladislav.d4dby;
+package com.example.silich.vladislav.d4dby.auth;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.silich.vladislav.d4dby.R;
+import com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment;
+import com.example.silich.vladislav.d4dby.utills.InputValidation;
 
 public class AuthFragment extends android.app.Fragment implements View.OnClickListener{
 
@@ -41,7 +45,7 @@ public class AuthFragment extends android.app.Fragment implements View.OnClickLi
                 }
                 break;
             case R.id.btn_auth_cancel :
-                fragmentManager.beginTransaction().replace(R.id.content_frame,new StartFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
                 break;
         }
     }

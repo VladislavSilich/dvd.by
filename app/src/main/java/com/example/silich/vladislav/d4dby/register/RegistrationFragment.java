@@ -1,4 +1,4 @@
-package com.example.silich.vladislav.d4dby;
+package com.example.silich.vladislav.d4dby.register;
 
 import android.app.FragmentManager;
 import android.os.Bundle;
@@ -9,6 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
+
+import com.example.silich.vladislav.d4dby.R;
+import com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment;
+import com.example.silich.vladislav.d4dby.utills.InputValidation;
 
 
 public class RegistrationFragment extends android.app.Fragment implements View.OnClickListener{
@@ -36,8 +40,6 @@ public class RegistrationFragment extends android.app.Fragment implements View.O
         btnCancel.setOnClickListener(this);
         return v;
     }
-
-
     @Override
     public void onClick(View v) {
         FragmentManager fragmentManager = getFragmentManager();
@@ -56,7 +58,7 @@ public class RegistrationFragment extends android.app.Fragment implements View.O
                 }
                 break;
             case R.id.btn_register_cancel:
-                fragmentManager.beginTransaction().replace(R.id.content_frame,new StartFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
                 break;
         }
     }
