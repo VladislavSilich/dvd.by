@@ -16,8 +16,8 @@ import com.example.silich.vladislav.d4dby.utills.InputValidation;
 
 public class AuthFragment extends android.app.Fragment implements View.OnClickListener{
 
-    EditText edtEmail,edtPass;
-    Button btnRegister,btnCancel;
+    private EditText edtEmail,edtPass;
+    private Button btnRegister,btnCancel;
 
     @Nullable
     @Override

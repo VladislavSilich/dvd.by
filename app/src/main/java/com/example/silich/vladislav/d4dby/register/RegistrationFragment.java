@@ -50,9 +50,11 @@ public class RegistrationFragment extends android.app.Fragment implements View.O
         switch (v.getId()){
             case R.id.btn_register_reg :
                 if (InputValidation.checkEmptyData(name,email,pass,repeatPass,getActivity())){
-                    if (InputValidation.checkPasswordEquals(pass,repeatPass,getActivity())) {
-                        if(InputValidation.checkCheckBox(buyer.isChecked(),seller.isChecked(),getActivity())) {
-                            Toast.makeText(getActivity(), "Добро пожаловать" + " " + name + "!", Toast.LENGTH_LONG).show();
+                    if (InputValidation.checkLengthPass(pass,repeatPass,getActivity())) {
+                        if (InputValidation.checkPasswordEquals(pass, repeatPass, getActivity())) {
+                            if (InputValidation.checkCheckBox(buyer.isChecked(), seller.isChecked(), getActivity())) {
+                                Toast.makeText(getActivity(), "Добро пожаловать" + " " + name + "!", Toast.LENGTH_LONG).show();
+                            }
                         }
                     }
                 }

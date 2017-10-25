@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/primary_text"
             android:text="Ваш e-mail:"
             />
         <EditText
@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:layout_marginTop="10dp"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/primary_text"
             android:text="Ваш пароль:"
             />
         <EditText
