@@ -1,5 +1,8 @@
 package com.example.silich.vladislav.d4dby.adapter;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,12 +23,14 @@ public class RecyclerSellersAdapter extends RecyclerView.Adapter<RecyclerSellers
     private ArrayList<String> mContent;
     private ArrayList<String > mLocation;
     private ArrayList<String> mTelephone;
+    private Context context;
 
 
-    public RecyclerSellersAdapter( ArrayList<String> mContent,ArrayList<String> mLocation,ArrayList<String>mTelephone) {
+    public RecyclerSellersAdapter( ArrayList<String> mContent,ArrayList<String> mLocation,ArrayList<String>mTelephone,Context context) {
         this.mTelephone = mTelephone;
         this.mLocation = mLocation;
         this.mContent = mContent;
+        this.context = context;
 
     }
     public  class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -37,10 +42,15 @@ public class RecyclerSellersAdapter extends RecyclerView.Adapter<RecyclerSellers
             txtName = (TextView)v.findViewById(R.id.txtName);
             txtLocation = (TextView)v.findViewById(R.id.txtLocation);
             txtPhone = (TextView)v.findViewById(R.id.txtNumber);
+
+            txtPhone.setOnClickListener(this);
         }
         @Override
         public void onClick(View v) {
-
+            Intent phone = new Intent(Intent.ACTION_DIAL);
+            phone.setData(Uri.parse("tel:" + mTelephone.get(getPosition())));
+            phone.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(phone);
         }
     }
     @Override

@@ -1,5 +1,6 @@
 package com.example.silich.vladislav.d4dby.listResponce;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -20,6 +21,7 @@ public class ListSellersFragment extends android.app.Fragment {
 	private ArrayList<String> list;
 	private ArrayList<String> mLocation;
 	private ArrayList<String> mPhone;
+	private Context context;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 							 Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class ListSellersFragment extends android.app.Fragment {
 		View v = inflater.inflate(R.layout.fragment_list_sellers, container, false);
 
 		getActivity().setTitle("Продавцы");
+		context = getActivity().getBaseContext();
 		recyclerView = (RecyclerView)v.findViewById(R.id.recyclerViewSellers);
 		mLayoutManager = new LinearLayoutManager(getActivity().getBaseContext());
 		recyclerView.setLayoutManager(mLayoutManager);
@@ -41,7 +44,7 @@ public class ListSellersFragment extends android.app.Fragment {
 		mPhone.add("+375297698675");
 		mPhone.add("+375297698675");
 
-		
+
 		mLocation.add("Минск");
 		mLocation.add("Минск");
 		mLocation.add("Минск");
@@ -56,7 +59,7 @@ public class ListSellersFragment extends android.app.Fragment {
 		list.add("Денис ");
 		list.add("Илья ");
 
-		mAdapter = new RecyclerSellersAdapter(list,mLocation,mPhone);
+		mAdapter = new RecyclerSellersAdapter(list,mLocation,mPhone,context);
 		recyclerView.setAdapter(mAdapter);
 		return v;
 	}

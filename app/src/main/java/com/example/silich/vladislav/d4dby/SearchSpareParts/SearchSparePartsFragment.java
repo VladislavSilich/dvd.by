@@ -69,8 +69,9 @@ public class SearchSparePartsFragment extends android.app.Fragment implements Vi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btnSearchSpare:
-                fragmentManager.beginTransaction().replace(R.id.content_frame,new ListSellersFragment()).commit();
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new ListSellersFragment()).addToBackStack("fragBack").commit();
                 break;
         }
+
     }
 }

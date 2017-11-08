@@ -1,5 +1,6 @@
 package com.example.silich.vladislav.d4dby.activity;
 
+import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -14,11 +15,13 @@ import android.view.MenuItem;
 import com.example.silich.vladislav.d4dby.R;
 import com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment;
 import com.example.silich.vladislav.d4dby.auth.AuthFragment;
+import com.example.silich.vladislav.d4dby.listResponce.ListSellersFragment;
 import com.example.silich.vladislav.d4dby.register.RegistrationFragment;
 
 public class GeneralActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FragmentManager fragmentManager;
+    Fragment fragment = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +48,17 @@ public class GeneralActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } if(fragment instanceof ListSellersFragment){
+            fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
+        }
+            else if (fragment instanceof RegistrationFragment){
+                fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
+
+            }
+            else if (fragment instanceof AuthFragment){
+                fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
+            }
+        else {
             super.onBackPressed();
         }
     }
