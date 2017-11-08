@@ -9,10 +9,6 @@
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.silich.vladislav.d4dby.SearchSpareParts.SearchSparePartsFragment">
-
-
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,9 +20,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorAccent"
-                android:textStyle="bold"
+                android:textStyle="italic|bold"
                 android:layout_marginTop="20dp"
-                android:textSize="20dp"
+                android:textSize="22dp"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="Найти продавцов запчастей"/>
