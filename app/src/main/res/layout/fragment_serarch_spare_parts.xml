@@ -131,6 +131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:padding="10dp"
+                    android:id="@+id/btnSearchSpare"
                     android:layout_margin="20dp"
                     android:background="@color/colorAccent"
                     android:text="Найти продавцов"/>

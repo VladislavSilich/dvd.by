@@ -24,6 +24,8 @@ public class AuthFragment extends android.app.Fragment implements View.OnClickLi
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
        View v = inflater.inflate(R.layout.fragment_auth,container,false);
 
+       getActivity().setTitle("Авторизация");
+
         edtEmail = (EditText)v.findViewById(R.id.edt_auth_email);
         edtPass = (EditText)v.findViewById(R.id.edt_auth_pass);
 

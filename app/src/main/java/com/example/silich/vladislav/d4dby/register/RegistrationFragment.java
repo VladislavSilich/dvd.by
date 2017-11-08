@@ -25,6 +25,9 @@ public class RegistrationFragment extends android.app.Fragment implements View.O
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v =  inflater.inflate(R.layout.fragment_registration, container, false);
+        getActivity().setTitle("Регистрация");
+
+
         edtName = (EditText)v.findViewById(R.id.edt_register_name);
         edtEmail = (EditText)v.findViewById(R.id.edt_register_email);
         edtPass = (EditText)v.findViewById(R.id.edt_register_pas);
