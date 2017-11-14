@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/colorAccent"
                 android:textStyle="italic|bold"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:textSize="22dp"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -30,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Марка авто"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:textColor="@color/colorPrimary"
                 android:id="@+id/mark_auto">
 
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/model_auto"
                 android:textColor="@color/colorPrimary"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:text="Модель авто">
 
             </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
@@ -55,7 +55,7 @@
                 android:id="@+id/year_auto"
                 android:textColorHint="@color/colorPrimary"
                 android:textColor="@color/colorPrimary"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:text="Выберите год">
             </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
 
@@ -63,7 +63,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/primary_text"
                 android:text="Введите искомую запчасть:"
                 />
@@ -80,7 +80,7 @@
                 android:id="@+id/city_search"
                 android:textColorHint="@color/colorPrimary"
                 android:textColor="@color/colorPrimary"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:text="Город поиска">
             </com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner>
             <TextView
@@ -124,13 +124,13 @@
                 android:layout_height="match_parent"
                 android:layout_marginEnd="10dp"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:orientation="vertical">
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:id="@+id/btnSearchSpare"
                     android:layout_margin="20dp"
                     android:background="@color/colorAccent"

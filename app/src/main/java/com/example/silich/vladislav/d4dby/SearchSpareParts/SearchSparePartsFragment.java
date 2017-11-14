@@ -43,6 +43,7 @@ public class SearchSparePartsFragment extends android.app.Fragment implements Vi
         spinYearAuto =(MaterialBetterSpinner)v.findViewById(R.id.year_auto) ;
         spinCitySearch = (MaterialBetterSpinner)v.findViewById(R.id.city_search);
 
+        getActivity().setTitle("Поиск запчастей");
         btnSearchSpare = (Button)v.findViewById(R.id.btnSearchSpare);
           markAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
                  android.R.layout.simple_dropdown_item_1line , masMark);

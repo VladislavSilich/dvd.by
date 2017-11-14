@@ -15,7 +15,10 @@
 
     <item android:title="Разделы">
         <menu>
-
+            <item
+                android:id="@+id/nav_search_parts"
+                android:icon="@drawable/ic_search_black_24dp"
+                android:title="Поиск запастей" />
             <item
                 android:id="@+id/nav_spare_parts"
                 android:icon="@drawable/ic_attachment_black_24dp"
