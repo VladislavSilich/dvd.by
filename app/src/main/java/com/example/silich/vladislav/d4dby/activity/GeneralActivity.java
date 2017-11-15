@@ -37,8 +37,10 @@ public class GeneralActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        if (savedInstanceState == null) {
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new SearchSparePartsFragment()).commit();
+        }
 
-        fragmentManager.beginTransaction().replace(R.id.content_frame,new SearchSparePartsFragment()).commit();
     }
 
     @Override

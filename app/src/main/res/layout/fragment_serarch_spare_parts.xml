@@ -67,7 +67,8 @@
                 android:textColor="@color/primary_text"
                 android:text="Введите искомую запчасть:"
                 />
-            <EditText
+            <AutoCompleteTextView
+                android:id="@+id/edtComlete_spare"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorPrimary"
