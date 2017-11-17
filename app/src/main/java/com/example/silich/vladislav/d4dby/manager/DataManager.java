@@ -1,6 +1,7 @@
 package com.example.silich.vladislav.d4dby.manager;
 
 
+import com.example.silich.vladislav.d4dby.model.res.MarksResponce;
 import com.example.silich.vladislav.d4dby.model.res.SparePartsRes;
 import com.example.silich.vladislav.d4dby.network.D4DService;
 import com.example.silich.vladislav.d4dby.network.ServiceGenerator;
@@ -30,6 +31,9 @@ import retrofit2.Call;
 
     public Call<List<SparePartsRes>> getSpare(){
         return mRestService.getSpare();
+    }
+    public Call<List<MarksResponce>> getMarksAll(int level){
+        return mRestService.getMarks(level);
     }
 
 }

@@ -12,6 +12,7 @@ import android.widget.Button;
 import com.example.silich.vladislav.d4dby.R;
 import com.example.silich.vladislav.d4dby.listResponce.ListSellersFragment;
 import com.example.silich.vladislav.d4dby.manager.DataManager;
+import com.example.silich.vladislav.d4dby.model.res.MarksResponce;
 import com.example.silich.vladislav.d4dby.model.res.SparePartsRes;
 import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
@@ -24,67 +25,75 @@ import retrofit2.Response;
 
 
 public class SearchSparePartsFragment extends android.app.Fragment implements View.OnClickListener{
-    private MaterialBetterSpinner spinMarkAuto;
-    private MaterialBetterSpinner spinModelAuto;
-    private MaterialBetterSpinner spinYearAuto;
-    private MaterialBetterSpinner spinCitySearch;
+    private MaterialBetterSpinner spinnerMarks,spinnerModel,spinnerYear,spinnerCity;
 	private AutoCompleteTextView edtComleteSpare;
     private Button btnSearchSpare;
 	private DataManager manager;
-    private ArrayAdapter<String> markAdapter;
-    private ArrayAdapter<String> modelAdapter;
-    private ArrayAdapter<String> yearsAdapter;
-    private ArrayAdapter<String> citySearchAdapter;
-	private ArrayList<SparePartsRes> listSpare;
     private FragmentManager fragmentManager;
-
-    ArrayList<String> spareParts;
-    String [] masMark = {"BMW","asdasdas"};
-    String [] masAuto = {"E34","sdada"};
-    List<String> listYear = new ArrayList<>();
-    String [] masCitySearch = {"Москва", "Минск"};
+	private ArrayList<SparePartsRes> listSpare;
+    private ArrayList<String> listMarks;
+    private ArrayList<String> listModels;
+    private ArrayList<String> listYear;
+    private ArrayList<String> listCity;
+	private ArrayList<String> spareParts;
+	private ArrayList<String> listMarksId;
+	private ArrayList<MarksResponce> marksResponces;
+	ArrayAdapter<String> adapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_serarch_spare_parts, container, false);
 
         fragmentManager = getFragmentManager();
-        listSpare = new ArrayList<>();
-		spareParts = new ArrayList<>();
+
 		manager = DataManager.getInstance();
-		getSpareParts();
+		spinnerMarks = (MaterialBetterSpinner)v.findViewById(R.id.mark_auto);
+		spinnerModel = (MaterialBetterSpinner)v.findViewById(R.id.model_auto);
+		spinnerYear = (MaterialBetterSpinner)v.findViewById(R.id.year_auto);
+		spinnerCity = (MaterialBetterSpinner)v.findViewById(R.id.city_search);
 		edtComleteSpare = (AutoCompleteTextView)v.findViewById(R.id.edtComlete_spare) ;
-        spinMarkAuto = (MaterialBetterSpinner)v.findViewById(R.id.mark_auto);
-        spinModelAuto = (MaterialBetterSpinner)v.findViewById(R.id.model_auto);
-        spinYearAuto =(MaterialBetterSpinner)v.findViewById(R.id.year_auto) ;
-        spinCitySearch = (MaterialBetterSpinner)v.findViewById(R.id.city_search);
 
         getActivity().setTitle("Поиск запчастей");
         btnSearchSpare = (Button)v.findViewById(R.id.btnSearchSpare);
 
-        addYearsInList();
+        marksResponces = new ArrayList<>();
+        spareParts = new ArrayList<>();
+		listSpare = new ArrayList<>();
+		listMarks = new ArrayList<>();
+		listModels = new ArrayList<>();
+		listModels.add("asdasdsa");
+		listYear = new ArrayList<>();
+		listCity = new ArrayList<>();
+		listCity.add("asda");
 
-          markAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
-                 android.R.layout.simple_dropdown_item_1line , masMark);
-        modelAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
-                android.R.layout.simple_dropdown_item_1line, masAuto);
-        yearsAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
-                android.R.layout.simple_dropdown_item_1line, listYear);
-        citySearchAdapter = new ArrayAdapter<>(getActivity().getBaseContext(),
-                android.R.layout.simple_dropdown_item_1line, masCitySearch);
+		listMarksId = new ArrayList<>();
+		generatedYear();
+		getAutoMarks();
+		getSpareParts();
 
-
-        spinModelAuto.setAdapter(markAdapter);
-        spinMarkAuto.setAdapter(modelAdapter);
-        spinYearAuto.setAdapter(yearsAdapter);
-        spinCitySearch.setAdapter(citySearchAdapter);
-
-        btnSearchSpare.setOnClickListener(this);
+		adapter = new ArrayAdapter<>(getActivity().getBaseContext(),
+				android.R.layout.simple_spinner_item,R.id.row_txt_value, listMarks);
+		spinnerMarks.setAdapter(adapter);
+		ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity().getBaseContext(),
+				android.R.layout.simple_spinner_item, listModels);
+		spinnerModel.setAdapter(adapter1);
+		ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(getActivity().getBaseContext(),
+				android.R.layout.simple_spinner_item, listYear);
+		spinnerYear.setAdapter(adapter3);
+		ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(getActivity().getBaseContext(),
+				android.R.layout.simple_spinner_item, listCity);
+		spinnerCity.setAdapter(adapter4);
+		btnSearchSpare.setOnClickListener(this);
         return v;
-
-
     }
-
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSearchSpare:
+                fragmentManager.beginTransaction().replace(R.id.content_frame, new ListSellersFragment()).addToBackStack("fragBack").commit();
+                break;
+        }
+    }
 	private void getSpareParts() {
 		Call<List<SparePartsRes>> call = manager.getSpare();
 		call.enqueue(new Callback<List<SparePartsRes>>() {
@@ -93,30 +102,11 @@ public class SearchSparePartsFragment extends android.app.Fragment implements Vi
 				listSpare.addAll(response.body());
 				createListSpare(listSpare);
 			}
-
 			@Override
 			public void onFailure(Call<List<SparePartsRes>> call, Throwable t) {
-
 			}
 		});
 	}
-
-	private void addYearsInList() {
-        for (int i = 0; i <= 28; i++){
-            int sum = 2018 - i;
-            listYear.add(String.valueOf(sum));
-        }
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.btnSearchSpare:
-                fragmentManager.beginTransaction().replace(R.id.content_frame, new ListSellersFragment()).addToBackStack("fragBack").commit();
-                break;
-        }
-
-    }
 	public void createListSpare(ArrayList<SparePartsRes> list){
 		for (int i = 0; i < list.size(); i++){
 			spareParts.add(list.get(i).getName());
@@ -126,4 +116,43 @@ public class SearchSparePartsFragment extends android.app.Fragment implements Vi
 				new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, spareParts);
 		edtComleteSpare.setAdapter(adapter);
 	}
+
+	public void  getAutoMarks(){
+		final int level = 1;
+		Call<List<MarksResponce>> call = manager.getMarksAll(level);
+		call.enqueue(new Callback<List<MarksResponce>>() {
+			@Override
+			public void onResponse(Call<List<MarksResponce>> call, Response<List<MarksResponce>> response) {
+				marksResponces.addAll(response.body());
+				createListMarks(marksResponces);
+
+			}
+
+			@Override
+			public void onFailure(Call<List<MarksResponce>> call, Throwable t) {
+
+			}
+		});
+	}
+
+	public void createListMarks(ArrayList<MarksResponce> list){
+		//ArrayList<MarksSpinnerModel> marksSpinnerModels = new ArrayList<>();
+
+		for (int i = 0; i < list.size(); i++){
+			listMarks.add(list.get(i).getName().toString());
+		}
+		ArrayAdapter<String> adapter =
+				new ArrayAdapter<String>(getActivity().getBaseContext(), android.R.layout.simple_list_item_1, listMarks);
+		spinnerMarks.setAdapter(adapter);
+
+
+
+	}
+	public void generatedYear(){
+		for (int i = 2018; i >=1990;i--){
+			String a = String.valueOf(i);
+			listYear.add(a);
+		}
+	}
+
 }
